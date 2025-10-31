@@ -20,10 +20,10 @@ class _GamePageState extends State<GamePage> {
   String computerChoice = '';
   String result = '';
   int round = 1;
-  double userRoundScore = 0;
-  double computerRoundScore = 0;
-  double userTotalScore = 0;
-  double computerTotalScore = 0;
+  int userRoundScore = 0;
+  int computerRoundScore = 0;
+  int userTotalScore = 0;
+  int computerTotalScore = 0;
 
   void playGame(String choice) {
     final random = Random();
