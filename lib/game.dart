@@ -144,6 +144,7 @@ class _GamePageState extends State<GamePage> {
                     onPressed: () => playGame(choice),
                     style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.all(20),
+                        backgroundColor: Colors.teal,
                     ),
                     child: Text(choice, style: const TextStyle(fontSize: 40)),
                   ),
