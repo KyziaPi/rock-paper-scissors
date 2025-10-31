@@ -1,5 +1,3 @@
-Here’s a clean and simple **README** for your Flutter Rock Paper Scissors game:
-
 ---
 
 # 🪨 Rock Paper Scissors (Flutter)
@@ -77,7 +75,3 @@ flutter run
 ## 📄 License
 
 This project is open source under the [MIT License](LICENSE).
-
----
-
-Would you like me to make this README more styled (with emojis, markdown tables, and screenshots section) or keep it plain for school documentation?
