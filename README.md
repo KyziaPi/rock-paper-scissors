@@ -69,9 +69,3 @@ flutter run
 * Add sound effects and animations
 * Add custom icons for Rock, Paper, and Scissors
 * Add leaderboard or win history
-
----
-
-## 📄 License
-
-This project is open source under the [MIT License](LICENSE).
