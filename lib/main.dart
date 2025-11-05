@@ -78,6 +78,7 @@ void showRoundOverPopup(BuildContext context, int round, String roundScore,
     {required VoidCallback nextRoundCallback}) {
   showDialog(
     context: context,
+    barrierDismissible: true,
     builder: (BuildContext context) {
       return Dialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -131,5 +132,8 @@ void showRoundOverPopup(BuildContext context, int round, String roundScore,
         ),
       );
     },
-  );
+  ).whenComplete(() {
+    // Called when the dialog is dismissed — including tapping outside
+    nextRoundCallback();
+  });
 }
