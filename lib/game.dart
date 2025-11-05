@@ -107,7 +107,14 @@ class _GamePageState extends State<GamePage> {
               ),
               child: Column(
                 children: [
-                  roundText('Best of ${widget.bestOf}', 30),
+                    Text(
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.teal,
+                      ),
+                      'Best of ${widget.bestOf}',
+                    )
                   ],
               )
             ),
@@ -181,3 +188,68 @@ class _GamePageState extends State<GamePage> {
     );
   }
 }
+
+void showRoundOverPopup(BuildContext context, int round, String roundScore,
+    String message, String totalScoreMessage,
+    {required VoidCallback nextRoundCallback}) {
+  showDialog(
+    context: context,
+    barrierDismissible: true,
+    builder: (BuildContext context) {
+      return Dialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Round $round Over!",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              Text(roundScore,
+                  style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold
+                  )
+              ),
+              SizedBox(height: 10),
+              Text(message, style: TextStyle(fontSize: 25)),
+              SizedBox(height: 10),
+              Text(totalScoreMessage, style: TextStyle(fontSize: 25)),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    style: customButtonStyle2(30),
+                    child: Text("Next Round"),
+                  ),
+                  const SizedBox(width: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MenuPage()),
+                      );
+                    },
+                    style: customButtonStyle(30),
+                    child: Text("Back to Menu"),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      );
+    },
+  ).whenComplete(() {
+    // Called when the dialog is dismissed — including tapping outside
+    nextRoundCallback();
+  });
+}
+
