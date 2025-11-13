@@ -1,13 +1,13 @@
 ---
 
-# 🪨 Rock Paper Scissors (Flutter)
+# Rock Paper Scissors (Flutter)
 
 A simple **Rock Paper Scissors** game built with **Flutter**, where the **user plays against the computer**.
 It features multiple game modes and lets players continue playing round after round without restarting.
 
 ---
 
-## 🎮 Features
+## Features
 
 * **User vs Computer** gameplay
 * **Game Modes:** Best of **1, 3, 5, 7, 9**
@@ -18,7 +18,7 @@ It features multiple game modes and lets players continue playing round after ro
 
 ---
 
-## 🧩 How It Works
+## How It Works
 
 1. Choose a **game mode** from the menu (e.g. *Best of 3*).
 2. Pick between **Rock**, **Paper**, or **Scissors**.
@@ -29,7 +29,7 @@ It features multiple game modes and lets players continue playing round after ro
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Flutter** (Dart)
 * Uses **Material Design widgets**
@@ -38,7 +38,7 @@ It features multiple game modes and lets players continue playing round after ro
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -56,7 +56,7 @@ flutter run
 
 ---
 
-## 📱 Screens Overview
+## Screens Overview
 
 * **Main Menu:** Choose game mode (Best of 1, 3, 5, 7, 9)
 * **Game Page:** Play rounds against the computer
@@ -64,8 +64,94 @@ flutter run
 
 ---
 
-## 💡 Possible Improvements
+## List of Widgets
 
-* Add sound effects and animations
-* Add custom icons for Rock, Paper, and Scissors
-* Add leaderboard or win history
+### **1. MenuPage Widget**
+
+* **Scaffold**: Main structure for the page.
+
+  * **AppBar**: Custom app bar with title 'RPS Menu'.
+  * **Body**: Contains the main content of the page.
+
+    * **Center**: Centers the body content.
+
+      * **Container**: Styled container to hold the menu options.
+
+        * **Padding**: Adds padding inside the container.
+        * **Margin**: Adds margin around the container.
+        * **BoxDecoration**: Provides background color, border radius, and border for styling.
+        * **Column**: Arranges child widgets vertically.
+
+          * **Text**: Displays the "BEST OF:" label.
+          * **SizedBox**: Provides spacing between elements.
+          * **Row**: Displays the available "best of" options horizontally.
+
+            * **Flexible**: Allows flexibility in layout for each button.
+            * **ElevatedButton**: Each button for selecting "Best of" game numbers (1, 3, 5, 7, 9).
+
+              * On pressed, navigates to the `GamePage` with the selected value.
+
+### **2. GamePage Widget**
+
+* **Scaffold**: Main structure for the game page.
+
+  * **AppBar**: Custom app bar with title 'Rock Paper Scissors'.
+  * **Body**: Contains the game content.
+
+    * **Center**: Centers the body content.
+
+      * **Column**: Arranges child widgets vertically.
+
+        * **Container**: Displays the current "Best of" game selection.
+
+          * **Padding**: Adds padding inside the container.
+          * **Margin**: Adds margin around the container.
+          * **BoxDecoration**: Provides background color, border radius, and border styling.
+          * **Text**: Displays the "Best of" game round.
+        * **SizedBox**: Adds spacing between elements.
+        * **Text**: Displays round information, score, and results.
+        * **Row**: Displays the current round score (if not a single round).
+        * **Text**: Displays player and computer choices.
+        * **SizedBox**: Adds spacing between elements.
+        * **Text**: Displays the result of the round.
+        * **Row**: Displays the choice buttons (Rock, Paper, Scissors).
+
+          * **ElevatedButton**: Buttons to make the player's choice in the game.
+        * **Padding**: Adds padding around the back button.
+
+          * **ElevatedButton**: Navigates back to the `MenuPage`.
+
+            * **Icon**: Displays a back arrow icon.
+            * **Text**: Displays "Back to Menu Page".
+
+---
+
+## Project Structure
+```
+├───android
+├───ios
+├───lib
+│       game.dart
+│       main.dart
+│       menu.dart
+├───linux
+├───macos
+├───test
+├───web
+└───windows
+│   .flutter-plugins-dependencies
+│   .gitignore
+│   .metadata
+│   analysis_options.yaml
+│   pubspec.lock
+│   pubspec.yaml
+│   README.md
+```
+
+* No assets were used in this project
+
+---
+
+## Reflection
+
+(TBD)
