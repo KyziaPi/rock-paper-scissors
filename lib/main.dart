@@ -33,7 +33,7 @@ AppBar buildAppBar(BuildContext context, String title) {
     ),
     backgroundColor: Colors.teal,
     centerTitle: true,
-    toolbarHeight: 125,
+    toolbarHeight: 70,
     automaticallyImplyLeading: false,
   );
 }

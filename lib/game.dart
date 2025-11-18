@@ -89,7 +89,7 @@ class _GamePageState extends State<GamePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(context, 'Rock Paper Scissors'),
+      appBar: buildAppBar(context, 'RPS'),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -218,7 +218,7 @@ void showRoundOverPopup(BuildContext context, int round, String roundScore,
               SizedBox(height: 10),
               Text(totalScoreMessage, style: TextStyle(fontSize: 25)),
               SizedBox(height: 20),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
@@ -228,7 +228,7 @@ void showRoundOverPopup(BuildContext context, int round, String roundScore,
                     style: customButtonStyle2(30),
                     child: Text("Next Round"),
                   ),
-                  const SizedBox(width: 20),
+                  const SizedBox(height: 15),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(

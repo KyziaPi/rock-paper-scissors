@@ -27,29 +27,29 @@ class MenuPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('BEST OF:',
+                const Text('BEST OF',
                     style: TextStyle(fontSize: 50,
                         color: Colors.white)
                 ),
                 const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 20.0,
+                  runSpacing: 0, 
                   children: bestOf.map((int num) {
-                    return Flexible(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => GamePage(bestOf: num),
-                              ),
-                            );
-                          },
-                          style: customButtonStyle(25),
-                          child: Text('$num'),
-                        ),
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10), 
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => GamePage(bestOf: num),
+                            ),
+                          );
+                        },
+                        style: customButtonStyle(35),
+                        child: Text('$num'),
                       ),
                     );
                   }).toList(),
