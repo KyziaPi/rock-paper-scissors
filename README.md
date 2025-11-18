@@ -154,4 +154,8 @@ flutter run
 
 ## Reflection
 
-(TBD)
+**Yerika Gueco's Reflection**
+
+Doing this project was really fun, because it was something new to me. I've never heard of Flutter and Dart before this project so it really dificult to understand how Dart works. It was very different from other programming languages I've used. As I was building my widgets, it felt like I just keep nesting more and more widgets as I started to build more and more of my UI, which felt like a taboo thing to do since it felt like nesting if's (not a good coding practice). I tried using the flutter documentation but it was honestly hard to utilize, so I ended up using ChatGPT to help me understand what so and so does as I was creating the project. 
+
+I was very lost when I was creating this project, even the class and function declarations that was automatically added in android studio when creating a new project I didn't understand. So I did a lot of research and watched tutorials before I started coding. Another challenge I encountered was passing values from one widget to another. To solve it, I asked ChatGPT to give me a simple code on how to pass value from one widget to another and utilize the value in the new widget. Using the sample code, i adjusted my project's code to apply the same feature provided so I learn even if I'm using a LLM. As I was finishing my code, I realized that my code was too cluttered and a lot of my UI elements were pretty much using the same widgets, just different values such as the text, color, border, width, and height. To optimize my code, I converted the repetitive widgets to functions that would return the root widget while modifying some of the elements using parameters.
