@@ -53,6 +53,7 @@ class _GamePageState extends State<GamePage> {
         '$userRoundScore - $computerRoundScore',
         'You lost the round!',
         'Total Score: $userTotalScore - $computerTotalScore',
+        requiredWins,
         nextRoundCallback: () {
           setState(() {
             round++;
@@ -69,6 +70,7 @@ class _GamePageState extends State<GamePage> {
           '$userRoundScore - $computerRoundScore',
           'You won the round!',
           'Total Score: $userTotalScore - $computerTotalScore',
+          requiredWins,
           nextRoundCallback: () {
             setState(() {
               round++;
@@ -190,7 +192,7 @@ class _GamePageState extends State<GamePage> {
 }
 
 void showRoundOverPopup(BuildContext context, int round, String roundScore,
-    String message, String totalScoreMessage,
+    String message, String totalScoreMessage, int requiredWins,
     {required VoidCallback nextRoundCallback}) {
   showDialog(
     context: context,
@@ -207,7 +209,7 @@ void showRoundOverPopup(BuildContext context, int round, String roundScore,
                 "Round $round Over!",
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
-              Text(roundScore,
+              requiredWins == 1 ? const SizedBox() : Text(roundScore,
                   style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.bold
